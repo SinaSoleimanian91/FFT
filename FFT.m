@@ -15,7 +15,7 @@ winH={'Transients that die out inside the record (impact, free drop, hammer test
       'Best amplitude accuracy for tones; poor frequency resolution.', ...
       'Strong side-lobe suppression (high dynamic range); wide main lobe.'};
 fltL={'None','Low-pass','High-pass','Band-pass','Band-stop'};
-spcL={'Amplitude (signal units) - recommended','Raw |FFT| (unscaled, as in the PDF examples)'};
+spcL={'Amplitude (signal units) - recommended','Raw |FFT| (unscaled)'};
 yL={'Linear','dB'};
 
 %% Default values
@@ -374,7 +374,7 @@ onSignal();
             if mod(nfft,2)==0, id=2:K-1; else, id=2:K; end
             mx(id)=2*mx(id);
             ylab='Amplitude (signal units)';
-        else%raw |FFT| as in the PDF examples
+        else
             ylab='Raw |FFT| (unscaled)';
         end
         [pk,ip]=max(mx);
